@@ -1,0 +1,102 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+	<title>ELEC224 - Hardware timers</title>
+	<meta name="description" content="">
+	<meta name="author" content="">
+
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+
+	<link rel="stylesheet" href="css/style.css">
+
+	<script src="js/libs/jquery-1.6.2.min.js"></script>
+	<script src="js/libs/modernizr-2.0.6.min.js"></script>
+	<script src="js/libs/underscore-min.js"></script>
+	<script src="js/libs/backbone-min.js"></script>
+</head>
+<body>
+
+<div id="container">
+	<header>
+		<h1 id="subject-title">ELEC224 - Hardware timers</h1>
+		<div id="auth">
+			Daniel Pyrathon | <a href="#logout">Logout</a>
+		</div>
+	</header>
+	<div id="main" role="main">
+		<div id="filter-toolkit">
+			<div id="filter-searchbox">
+	 			<img class="mag-gif left" src="images/search.gif">
+				<input id="search-field" class="left" type="text">
+			</div>
+			<div id="filter-meta">
+				<div id="filter-likes"></div>
+				<div id="filter-answers"></div>
+			</div>
+		</div>
+		<div id="questions-set">
+		</div>
+		<form id="questions-add" action="#addQuestion" method="get">
+			<p>New Question</p>
+			<input id="questions-add-input" type="text"></input>
+		</form>
+		<div id="demo-box">
+			<span style="position: absolute; right: 5px; top: 2px;" onClick="$('#demo-box').fadeOut('slow');"><a style="text-decoration: none; color: black;" href="#">x</a></span>
+			<p style="color: red;">Demo box</p>
+			<button type="button">Populate with dummy data</button>
+		</div>
+	</div>
+	<footer>
+
+	</footer>
+</div> <!--! end of #container -->
+
+<!-- scripts concatenated and minified via ant build script-->
+<!-- end scripts-->
+
+<script>
+	var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']]; // Change UA-XXXXX-X to be your site's ID
+	(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.async=1;
+	g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+	s.parentNode.insertBefore(g,s)}(document,'script'));
+</script>
+
+<script id="question-template" type="text/template">
+	<div class="question-description">
+		<h2 class="question-title"><a href="#"><%= body %></a></h2>
+		<div class="question-meta">
+			<div class="question-meta-like">
+				<p class="meta-value"><a href="#"><%= likes %></a></p>
+				<p class="meta-key">+1</p>
+			</div>
+			<div class="question-meta-answers">
+				<p class="meta-value"><%= comment_count %></p>
+				<p class="meta-key">answers</p>
+			</div>
+		</div>
+	</div>
+	<div class="question-answers">
+	</div>
+	<div class="question-form">
+		<form action="#addComment" method="get">
+		  <input class="question-input" type="text"></input>	
+		</form>
+	</div>
+</script>
+
+<script src="js/plugins.js"></script>
+<script src="js/script.js"></script>
+
+<!--[if lt IE 7 ]>
+	<script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.2/CFInstall.min.js"></script>
+	<script>window.attachEvent("onload",function(){CFInstall.check({mode:"overlay"})})</script>
+<![endif]-->
+
+</body>
+</html>
